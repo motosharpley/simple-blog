@@ -1,0 +1,15 @@
+<h1>Welcome to Articles Index</h1>
+
+<%= link_to 'Create a new Article', new_article_path %>
+
+<div class="row">
+	<div class="col-md-8">
+		<% @articles.each do |article| %>
+		<h2><%= article.title %></h2>
+		<p><%= article.description %></p>
+		<small><%= article.created_at %></small>
+		<%= link_to 'Show Article', article_path(article) %> |
+		<%= link_to 'Edit Article', edit_article_path(article) %>
+		<% end %>
+	</div>
+</div>
